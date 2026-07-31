@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #e83b0b;
+  --color-accent: #f36b11;
+  --color-whatsapp: #25d366;
+  --color-callgreen: #008a00;
+  --color-tint: #eeeefa;
+}
+
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-accent: var(--color-accent);
+  --color-whatsapp: var(--color-whatsapp);
+  --color-callgreen: var(--color-callgreen);
+  --color-tint: var(--color-tint);
+  --font-sans: var(--font-montserrat);
+  --font-display: var(--font-space-grotesk);
+}
+
+body {
+  font-family: var(--font-montserrat), sans-serif;
+  color: #171717;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
