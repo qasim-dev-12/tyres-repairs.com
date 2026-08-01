@@ -1,39 +1,39 @@
 import Image from "next/image";
 
 const LOGOS = [
-  "6-1.png",
-  "1-3.png",
-  "2-3.png",
-  "3-2.png",
-  "4-2.png",
-  "5-1.png",
-  "7.png",
-  "8.png",
-  "9.png",
+  { file: "6-1.png", name: "Toyota" },
+  { file: "1-3.png", name: "Mercedes-Benz" },
+  { file: "2-3.png", name: "Tesla" },
+  { file: "3-2.png", name: "BMW" },
+  { file: "4-2.png", name: "Limousine Palace" },
+  { file: "5-1.png", name: "Ferrari" },
+  { file: "7.png", name: "Nissan" },
+  { file: "8.png", name: "Ford" },
+  { file: "9.png", name: "Honda" },
 ];
 
 export default function BrandStrip() {
-  const logos = [...LOGOS, ...LOGOS];
   return (
-    <section className="overflow-hidden bg-white py-14">
-      <h2 className="text-center font-display text-2xl font-bold text-black sm:text-3xl">
-        We Cooperate with Big Auto Brands
+    <section className="bg-tint py-16">
+      <h2 className="text-center font-display text-3xl font-bold text-black sm:text-4xl">
+        We Cooperate With Big Auto Brands
       </h2>
-      <div className="mx-auto mt-3 h-1 w-20 rounded bg-primary" />
 
-      <div className="mt-10 overflow-hidden">
-        <div className="animate-marquee flex w-max items-center gap-16">
-          {logos.map((logo, i) => (
+      <div className="mx-auto mt-10 grid max-w-6xl grid-cols-2 gap-6 px-4 sm:grid-cols-4 sm:px-6 lg:px-8">
+        {LOGOS.map((logo) => (
+          <div
+            key={logo.file}
+            className="flex aspect-square items-center justify-center border border-neutral-200 bg-white p-8"
+          >
             <Image
-              key={`${logo}-${i}`}
-              src={`/images/${logo}`}
-              alt="Partner brand"
-              width={90}
-              height={60}
-              className="h-12 w-auto opacity-70 grayscale"
+              src={`/images/${logo.file}`}
+              alt={logo.name}
+              width={300}
+              height={300}
+              className="h-full w-full object-contain"
             />
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

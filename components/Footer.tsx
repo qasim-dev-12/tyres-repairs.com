@@ -4,14 +4,36 @@ import { ADDRESS, EMAIL, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_LINK } from "@/lib/s
 export default function Footer() {
   return (
     <footer id="contact" className="relative overflow-hidden bg-black pb-24 pt-14 text-white md:pb-14">
+      <Image
+        src="/images/footer-left.png"
+        alt=""
+        width={402}
+        height={326}
+        className="pointer-events-none absolute -left-16 -top-10 hidden h-auto w-56 opacity-20 md:block"
+      />
+      <Image
+        src="/images/footer-right.png"
+        alt=""
+        width={637}
+        height={173}
+        className="pointer-events-none absolute -right-10 bottom-16 hidden h-auto w-64 opacity-20 lg:block"
+      />
+      <Image
+        src="/images/footer-bar-left.png"
+        alt=""
+        width={389}
+        height={168}
+        className="pointer-events-none absolute -bottom-6 left-1/3 hidden h-auto w-48 opacity-10 lg:block"
+      />
+
       <div className="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
         <div>
           <Image
-            src="/images/png-1-e1727874884660-1024x343.png"
-            alt="Tyre Repair"
-            width={200}
-            height={67}
-            className="h-12 w-auto"
+            src="/images/logo-tyre-repair.png"
+            alt="Tyre Repair - Auto Repairing Service"
+            width={1774}
+            height={887}
+            className="h-14 w-auto"
           />
           <p className="mt-4 text-sm text-neutral-400">
             From minor repairs to major overhauls, we provide reliable and expert car services to
@@ -57,7 +79,7 @@ export default function Footer() {
       </div>
 
       <div className="relative mx-auto mt-10 max-w-7xl border-t border-white/10 px-4 pt-6 text-center text-xs text-neutral-500 sm:px-6 lg:px-8">
-        Copyright {new Date().getFullYear()}, tyrerepair.com All Rights Reserved.
+        Copyright 2024, tyrerepair.com All Rights Reserved.
       </div>
 
       <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 md:hidden">

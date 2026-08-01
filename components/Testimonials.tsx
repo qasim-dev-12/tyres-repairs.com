@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const TESTIMONIALS = [
@@ -40,44 +41,41 @@ export default function Testimonials() {
   const current = TESTIMONIALS[index];
 
   return (
-    <section className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 lg:px-8">
-      <h2 className="font-display text-3xl font-bold text-black sm:text-4xl">
-        Our Customers Love Us!
-      </h2>
-      <div className="mx-auto mt-3 h-1 w-20 rounded bg-primary" />
+    <section className="grid grid-cols-1 md:grid-cols-2">
+      <div className="relative hidden h-[500px] md:block">
+        <Image
+          src="/images/istockphoto-1497239621-612x612-1.jpg"
+          alt="Auto mechanic talking to the customer in a repair shop"
+          fill
+          className="object-cover"
+        />
+      </div>
 
-      <div className="mt-10 flex items-center justify-center gap-4">
+      <div className="relative flex min-h-[500px] flex-col items-center justify-center bg-black px-10 py-16 text-center sm:px-16">
+        <div className="mb-6 h-1 w-24 bg-primary" />
+        <h2 className="font-display text-3xl font-bold text-primary sm:text-4xl">
+          Our Customers Love Us!
+        </h2>
+
+        <p className="mt-10 max-w-xl text-lg italic leading-relaxed text-white">
+          &ldquo;{current.text}&rdquo;
+        </p>
+        <p className="mt-6 font-semibold text-white">{current.name}</p>
+
         <button
           onClick={prev}
           aria-label="Previous testimonial"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-tint text-black hover:bg-primary hover:text-white transition-colors"
+          className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl text-white/70 hover:text-white sm:left-8"
         >
           ‹
         </button>
-
-        <div className="min-h-[140px] flex-1">
-          <p className="text-lg italic text-neutral-700">&ldquo;{current.text}&rdquo;</p>
-          <p className="mt-4 font-display font-bold text-primary">{current.name}</p>
-        </div>
-
         <button
           onClick={next}
           aria-label="Next testimonial"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-tint text-black hover:bg-primary hover:text-white transition-colors"
+          className="absolute right-4 top-1/2 -translate-y-1/2 text-2xl text-white/70 hover:text-white sm:right-8"
         >
           ›
         </button>
-      </div>
-
-      <div className="mt-6 flex justify-center gap-2">
-        {TESTIMONIALS.map((t, i) => (
-          <button
-            key={t.name}
-            onClick={() => setIndex(i)}
-            aria-label={`Go to testimonial ${i + 1}`}
-            className={`h-2.5 w-2.5 rounded-full ${i === index ? "bg-primary" : "bg-neutral-300"}`}
-          />
-        ))}
       </div>
     </section>
   );

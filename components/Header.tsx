@@ -3,31 +3,35 @@ import Link from "next/link";
 import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_LINK } from "@/lib/site";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Tyre Replacement", href: "#services" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Home", href: "#home", active: true },
+  { label: "Services", href: "#services", active: false },
+  { label: "About", href: "#about", active: true },
+  { label: "Tyre Replacement", href: "#services", active: false },
+  { label: "Contact Us", href: "#contact", active: false },
 ];
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-black text-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="#home" className="shrink-0">
+        <Link href="#home" className="flex shrink-0 items-center">
           <Image
-            src="/images/png-1-e1727874884660-1024x343.png"
-            alt="Tyre Repair"
-            width={180}
-            height={60}
-            className="h-10 w-auto sm:h-12"
+            src="/images/logo-tyre-repair.png"
+            alt="Tyre Repair - Auto Repairing Service"
+            width={1774}
+            height={887}
+            className="h-12 w-auto sm:h-14"
             priority
           />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm font-semibold uppercase tracking-wide">
           {NAV_LINKS.map((link) => (
-            <a key={link.label} href={link.href} className="hover:text-primary transition-colors">
+            <a
+              key={link.label}
+              href={link.href}
+              className={`transition-colors hover:text-primary ${link.active ? "text-primary" : ""}`}
+            >
               {link.label}
             </a>
           ))}

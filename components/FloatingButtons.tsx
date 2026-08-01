@@ -5,10 +5,11 @@ export default function FloatingButtons() {
     <>
       <a
         href={PHONE_TEL}
-        className="fixed bottom-20 right-4 z-40 flex items-center gap-2 rounded-full bg-callgreen px-4 py-3 text-sm font-bold text-white shadow-lg md:bottom-6"
+        aria-label="Call Now"
+        title="Call Now"
+        className="fixed bottom-20 left-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-callgreen text-white shadow-lg md:bottom-6"
       >
-        <PhoneIcon className="h-4 w-4" />
-        Call Now
+        <PhoneIcon className="h-6 w-6" />
       </a>
 
       <a
@@ -16,7 +17,8 @@ export default function FloatingButtons() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed bottom-36 right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-whatsapp text-white shadow-lg md:bottom-24"
+        title="Chat on WhatsApp"
+        className="fixed bottom-20 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-lg md:bottom-6"
       >
         <WhatsAppIcon className="h-6 w-6" />
       </a>

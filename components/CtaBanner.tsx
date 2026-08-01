@@ -3,39 +3,49 @@ import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
 export default function CtaBanner() {
   return (
-    <section className="relative overflow-hidden bg-primary py-14 text-white">
-      <Image
-        src="/images/man-footer__1_-removebg-preview.png"
-        alt=""
-        width={260}
-        height={320}
-        className="pointer-events-none absolute -bottom-4 right-4 hidden h-72 w-auto opacity-90 md:block"
-      />
-
-      <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-        <Image
-          src="/images/Screenshot_13-removebg-preview.png"
-          alt=""
-          width={60}
-          height={60}
-          className="mx-auto mb-4 h-12 w-auto"
-        />
-        <h2 className="font-display text-2xl font-bold sm:text-3xl">
-          IF ANY CAR RELATED ISSUES ARE BOTHERING
-        </h2>
-        <h2 className="font-display text-3xl font-extrabold sm:text-4xl">GIVE A CALL</h2>
-
-        <div className="mt-8 flex flex-col items-center gap-2">
-          <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest">
-            <PhoneVolumeIcon className="h-5 w-5" />
-            We are Available 24x7
+    <section className="relative overflow-hidden bg-primary py-10">
+      <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 sm:px-6 md:flex-row md:justify-between lg:px-8">
+        <div className="text-center md:text-left">
+          <p className="flex items-center justify-center gap-3 text-sm font-bold uppercase tracking-widest text-white md:justify-start">
+            <StripesIcon className="h-6 w-8" />
+            If Any Car Realated Issues Are Bothering
           </p>
-          <a href={PHONE_TEL} className="font-display text-4xl font-extrabold sm:text-5xl">
-            {PHONE_DISPLAY}
-          </a>
+          <h2 className="mt-1 font-display text-3xl font-extrabold text-white sm:text-4xl">
+            GIVE A CALL
+          </h2>
+        </div>
+
+        <Image
+          src="/images/man-footer__1_-removebg-preview.png"
+          alt="Technician holding a tyre"
+          width={260}
+          height={320}
+          className="h-56 w-auto shrink-0 sm:h-64"
+        />
+
+        <div className="flex items-center gap-4 text-center md:text-left">
+          <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white text-primary">
+            <PhoneVolumeIcon className="h-7 w-7" />
+          </span>
+          <div>
+            <p className="text-sm font-bold text-white">We are Available 24x7</p>
+            <a href={PHONE_TEL} className="font-display text-3xl font-extrabold text-white sm:text-4xl">
+              {PHONE_DISPLAY}
+            </a>
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function StripesIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 40 24" fill="currentColor" className={className}>
+      <polygon points="0,24 8,24 20,0 12,0" />
+      <polygon points="12,24 20,24 32,0 24,0" />
+      <polygon points="24,24 32,24 40,4 34,4" opacity="0.7" />
+    </svg>
   );
 }
 
