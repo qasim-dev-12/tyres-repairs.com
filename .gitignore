@@ -60,6 +60,9 @@ Thumbs.db
 
 # PM2 logs
 logs/
-*.log"node_modules/" 
-".node/" 
-".next/" 
+*.log
+
+# dependencies / build
+node_modules/
+.node/
+.next/
