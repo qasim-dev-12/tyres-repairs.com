@@ -60,7 +60,7 @@ export default function RootLayout({
         </Script>
       </head>
 
-      <body className={`bg-[#FCFCFC] dark:bg-black ${rajdhani.className}`}>
+      <body className={`bg-black ${rajdhani.className}`}>
         <Providers>
           <div className="isolate">
             <Header />
